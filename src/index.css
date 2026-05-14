@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30 10% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 25%;
+    --primary: 82 28% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 30% 93%;
+    --secondary-foreground: 30 10% 25%;
+    --muted: 30 20% 94%;
+    --muted-foreground: 30 8% 50%;
+    --accent: 30 30% 93%;
+    --accent-foreground: 30 10% 25%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 82 28% 53%;
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --color-bg: #FAF5EE;
+    --color-primary: #8DA868;
+    --color-primary-dark: #7A9458;
+    --color-accent: #D4956B;
+    --color-accent-light: #E8B89A;
+    --color-text: #4A4540;
+    --color-text-muted: #8B8579;
+    --color-card: #FFFFFF;
+    --color-border: #E8E0D6;
+    --color-coral: #FF89A6;
+    --color-green: #BCD27C;
+    --color-pink: #FFBECE;
+    --color-blue: #CBD9E8;
+    --color-yellow: #F2ECB6;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Serif SC', 'PingFang SC', serif;
+    background-color: var(--color-bg);
+  }
+}
+
+.font-title {
+  font-family: "华文隶书", "STLiti", "LiSu", "隶书", cursive;
+}
+
+.font-body {
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Chinese vintage border pattern */
+.border-vintage {
+  border: 2px solid var(--color-border);
+  position: relative;
+}
+.border-vintage::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Corner decorations for vintage card */
+.corner-decor {
+  position: relative;
+}
+.corner-decor::before,
+.corner-decor::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-accent);
+  opacity: 0.4;
+}
+.corner-decor::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+.corner-decor::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
